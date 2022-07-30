@@ -28,6 +28,9 @@ header {
     display: flex;
     align-items: center;
 }
+.header__left img{
+    height: 49px;
+}
 
 .header__right {
     display: flex;
@@ -50,14 +53,29 @@ header {
 
 .header__right ul li img {
     display: block;
+    border-radius: 100%;
 }
 
-.header__right ul li.header__right__float a {
+.header__right ul li a {
+    width: 40px;
+    height: 40px;
+    background-color: #3683f0;
     position: relative;
-    top: 49.77px;
+    border-radius: 100%;
+}
+.header__right ul li a svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: white;
+    width: 20px;
+    height: 20px;
 }
 
-.header__right ul li:not(.header__right__float) {
+.header__right ul li{
     display: flex;
     align-items: center;
 }
@@ -188,6 +206,7 @@ header {
     border: 1px solid lightgray;
     border-top: none;
     padding: 43px 87px;
+    border-radius: 0 0 11px 13px;
 }
 .main .main__content .main__content__demotask{
     display: block;
@@ -199,6 +218,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     margin: -43.5px;
+    justify-content: center;
 }
 .main__content__card{
     width: 50%;
@@ -222,6 +242,34 @@ header {
     transition: .3s;
     transform: rotate(180deg);
 }
-.more-content.off img{
+.more-content img.off{
     transform: rotate(0deg);
+}
+
+.main__content__video{
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+}
+.main__content__video iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.nxt__btn{
+    margin-top: 43px;
+}
+.nxt__btn button{
+    margin-left: auto;
+    display: block;
+    width: fit-content;
+    border: none;
+    border-radius: 3px;
+    background-color: #0029ff;
+    color: #fff;
+    padding: 15px 21px;
+    cursor: pointer;
 }

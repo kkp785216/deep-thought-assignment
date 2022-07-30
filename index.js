@@ -195,7 +195,6 @@ let data = {
 const loadSidebar = () => {
     let html = '';
     let htmlArr = data.tasks.map((element, index) => {
-        console.log(element)
         return `
          <li>
             <h4>
@@ -205,9 +204,9 @@ const loadSidebar = () => {
             <ul>
             ${element.assets.map((element, index) => {
             return `<li>
-                    <a href="#">${element.asset_title}</a>
+                    <a href="#${element.asset_title.replace(/\s+/g, '')}">${element.asset_title}</a>
                 </li>`
-        })
+        }).join('')
             }
             </ul>
         </li>`
@@ -221,7 +220,66 @@ loadSidebar();
 
 
 // Expend and Collapse Cards
-const expand = () => {
-    document.querySelector('.more-content').classList.toggle('off');
-    document.querySelector('.main__content__card__content_aria').classList.toggle('off');
+const expand = (e) => {
+    e.classList.toggle('off');
+    e.parentElement.parentElement.querySelector('.main__content__card__content_aria').classList.toggle('off');
+}
+
+// Fetch data and render Cards
+const loadCard = () => {
+    let html = '';
+    let htmlArr = data.tasks.map((element, index) => {
+        return `
+        <div class="main__content__card__wrapper">
+        ${element.assets.map((element, index) => {
+            return `
+                <div class="main__content__card">
+                    <div class="heading-bar" id="${element.asset_title.replace(/\s+/g, '')}">
+                        ${element.asset_title}
+                    </div>
+                    <div class="main__content__card__content content-box">
+                        <div class="main__content__card__content_aria">
+                        ${element.asset_type === 'display_asset' && element.display_asset_reflection ?
+                    `<p style="font-weight: 600; line-height: 22px;">${element.display_asset_reflection}</p>` : ''
+                }
+                        ${element.asset_type === 'display_asset' && element.display_asset_docs ?
+                    `<iframe src="${element.display_asset_docs}" width="100%" height="800px" frameborder="0"></iframe>` : ''
+                }
+                        ${element.asset_type === 'display_asset' && element.display_asset_url ?
+                    `<iframe src="${element.display_asset_url}" width="100%" frameborder="0"></iframe>` : ''
+                }
+                        ${element.asset_type === 'display_asset' && element.display_asset_image ?
+                    `<img src="${element.display_asset_image}" height=100%" width="100%">` : ''
+                }
+                        ${element.asset_type === 'display_asset' && element.display_asset_video ?
+                    `<div class="main__content__video"><iframe width="100%" height="100%" src="${element.display_asset_video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>` : ''
+                }
+                        ${element.asset_type === 'input_asset' ?
+                    `<img src="./assets/img/input.png" width="100%" alt="input">` : ''
+                }
+                        </div>
+                        <div class="more-content">
+                            <img src="./assets/img/expand.svg" onclick="expand(this)" width="33" height="33" alt="">
+                        </div>
+                    </div>
+                </div>`
+        }).join('')}
+        </div>
+        `
+    })
+    htmlArr.forEach(element => {
+        html += element
+    });
+    document.querySelector('.main__content_page').innerHTML = html;
+}
+loadCard();
+
+
+// Next Button Disable if One Main page
+// if (document.querySelector('.main__content_page').childElementCount <= 1) {
+//     document.querySelector('.nxt__btn button').disabled = true;
+// }
+if(Array.from(document.querySelector('.main__content_page').children).length <= 1){
+        document.querySelector('.nxt__btn button').disabled = true;
+
 }
