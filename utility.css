@@ -1,0 +1,36 @@
+.heading-bar{
+    background-color: #000000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding: 0 24px;
+    height: 41px;
+    border-radius: 11px 13px 0 0;
+    font-weight: 600;
+}
+.heading-bar h3{
+    font-size: 15px;
+}
+
+.content-box{
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0 0 11px 13px;
+    padding: 24px;
+    padding-bottom: 0;
+}
+
+.more-content{
+    padding-top: 11px;
+    text-align: right;
+}
+.more-content img{
+    cursor: pointer;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}

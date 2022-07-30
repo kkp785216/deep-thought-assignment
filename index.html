@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Thought</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- [1] Header -->
+    <header class="header">
+        <a href="/" class="header__left"><img src="./assets/img/logo.svg" alt="logo"></a>
+        <nav class="header__right">
+            <ul>
+                <li class="header__right__float">
+                    <a href="#">
+                        <img src="./assets/img/home.svg" alt="">
+                    </a>
+                </li>
+                <li class="header__right__float">
+                    <a href="#">
+                        <img src="./assets/img/tools.svg" alt="">
+                    </a>
+                </li>
+                <li class="header__right__float">
+                    <a href="#">
+                        <img src="./assets/img/notifications.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <img src="./assets/img/user.svg" alt="Olivia">
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="28" fill="#3683f0"
+                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- [2] Sidebar -->
+    <aside class="sidebar off">
+        <div class="heading-bar sidebar__heading">
+            <h3>Journey Board</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleSidebar()" width="33" height="27" fill="currentColor"
+                class="bi bi-list toggle-sidebar" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+        </div>
+        <div class="content-box sidebar__content">
+            <!-- Data Comming from API -->
+        </div>
+    </aside>
+
+    <!-- [3] Main -->
+    <main class="main">
+        <div class="main__heading heading-bar">
+            <h1>You Are Taking Challenges Of New Project</h1>
+        </div>
+        <div class="main__content">
+            <span class="main__content__demotask">demo task</span>
+            <div class="main__content__card__wrapper">
+                <div class="main__content__card">
+                    <div class="heading-bar">
+                        #Task Heading 1
+                    </div>
+                    <div class="main__content__card__content content-box">
+                        <div class="main__content__card__content_aria">
+                            <!-- <p style="font-weight: 600; line-height: 22px;">
+                                Lorem ipsum dolor, sit amet consectetur
+                            </p> -->
+                        </div>
+                        <div class="more-content">
+                            <img src="./assets/img/expand.svg" onclick="expand()" width="33" height="33" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="main__content__card">
+                    <div class="heading-bar">
+                        #Task Heading 1
+                    </div>
+                </div>
+                <div class="main__content__card">
+                    <div class="heading-bar">
+                        #Task Heading 1
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Scripts -->
+    <script src="./index.js"></script>
+</body>
+
+</html>
